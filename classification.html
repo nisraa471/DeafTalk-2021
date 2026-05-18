@@ -1,0 +1,70 @@
+{% extends 'home.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeafTalk | Sign Language Detector</title>
+</head>
+
+<body>
+    <br>
+    <h1 style="text-align: center;">DeafTalk</h1>
+    <h3 style="text-align: center;">Sign Language Detector</h3>
+    <h5 style="text-align: center;">عمل الطالبات: ميار ربيع و إسراء حنتولي</h5>
+
+
+    {% block content %}
+    <div class="alert alert-success" role="alert" style="text-align: center;">
+        تم التصنيف بنجاح
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="img-fluid" src="static/{{ data['img1_url'] }}" alt="1st Test Sample">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">نتيجة التصنيف للصورة الأولى</p>
+                    <h5 class="card-title"><strong>{{ data['result1'] }}</strong></h5>
+                    <audio controls>
+                        <source src="{{ data['tts1_url'] }}" type='audio/mpeg'>
+                        Your browser does not support the html audio tag.
+                    </audio>
+                    <p class="card-text">دقة التصنيف {{ data['accuracy1'] }}</p>
+                    <p class="card-text"><small class="text-muted">عينة الأختبار الأولى</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="img-fluid" src="static/{{ data['img2_url'] }}" alt="2nd Test Sample">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">نتيجة التصنيف للصورة الثانية</p>
+                    <h5 class="card-title"><strong>{{ data['result2'] }}</strong></h5>
+                    <audio controls>
+                        <source src="{{ data['tts2_url'] }}" type='audio/mpeg'>
+                    </audio>
+                    <p class="card-text">دقة التصنيف {{ data['accuracy2'] }}</p>
+                    <p class="card-text"><small class="text-muted">عينة الأختبار الثانية</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="/" class="btn btn-secondary">الرئيسية</a>
+    <br>
+    <br>
+    {% endblock %}
+
+
+</body>
+
+</html>
