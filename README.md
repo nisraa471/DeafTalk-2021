@@ -29,8 +29,11 @@ DeafTalk/
 ├── labels.txt                 Class label definitions
 
 ├── templates/
+
 │   ├── home.html              Upload interface
+
 │   └── classification.html   Results display
+
 └── static/                    Sample test images
 
 How It Works
