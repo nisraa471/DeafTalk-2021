@@ -20,10 +20,14 @@ Tech Stack
 LayerTechnologyLanguagePython 3.8ML FrameworkTensorFlow / KerasWeb FrameworkFlaskImage ProcessingPillow (PIL), NumPyText to SpeechgTTS
 Project Structure
 DeafTalk/
-├── app.py                     Flask routes and request handling
+├── app.py   Flask routes and request handling
+
 ├── SignLanguageDetector.py    Model loading and inference pipeline
+
 ├── keras_model.h5             Trained Keras CNN model
+
 ├── labels.txt                 Class label definitions
+
 ├── templates/
 │   ├── home.html              Upload interface
 │   └── classification.html   Results display
