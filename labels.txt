@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>DeafTalk | Sign Language Detector</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1 style="text-align: center;">DeafTalk</h1>
+        <h3 style="text-align: center;">Sign Language Detector</h3>
+        <h5 style="text-align: center;">عمل الطالبات: ميار ربيع و إسراء حنتولي</h5>
+
+        {% block content %}
+        <p style="font-weight: bold;">يرجى اختيار صورة الإشارة التي تود للمنصة أن تحدد معناها</p>
+
+        <form action="/classification" method="POST" enctype="multipart/form-data">
+            <h4>الصورة الأولى</h4>
+            <input type="file" name="file1" />
+            <br>
+            <hr>
+            <h4>الصورة الثانية</h4>
+            <input type="file" name="file2" />
+            <br>
+            <hr>
+            <input type="submit" value="قم بالتصنيف" class="btn btn-primary" />
+        </form>
+        <br>
+        <hr>
+        <h3 style="text-align: center;">الإشارات التي تم تدريب المنصة عليها</h3>
+        <ul class="list-group" style="text-align: center;">
+            <li class="list-group-item">أراك لاحقا</li>
+            <li class="list-group-item">أنت</li>
+            <li class="list-group-item">عمل جيد</li>
+            <li class="list-group-item">اقتباس</li>
+        </ul>
+        <br>
+        <br>
+        {% endblock %}
+
+    </div>
+
+    <!-- <a href="/classification">Predict</a> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
